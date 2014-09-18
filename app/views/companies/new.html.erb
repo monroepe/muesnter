@@ -1,0 +1,30 @@
+<h1>New Company</h1>
+
+<%= form_for @company, url: {action: "create"}, html: {class: "input_form"} do |f| %>
+
+  <p>
+  <%= f.label :name %><br />
+  <%= f.text_field :name, size: "50x10" %>
+  </p>
+
+  <p>
+  <%= f.label :industry %><br />
+  <%= f.text_field :industry, size: "50x10" %>
+  </p>
+
+  <p>
+  <%= f.label :location %><br />
+  <%= f.text_field :location, size: "50x10" %>
+  </p>
+
+  <p>
+  <%= f.label :description %><br />
+  <%= f.text_area :description, size: "60x12" %>
+  </p>
+
+  <p>
+  <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to "Index", jobs_path %>

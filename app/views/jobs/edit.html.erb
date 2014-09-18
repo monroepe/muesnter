@@ -1,0 +1,24 @@
+<h1>Edit Job</h1>
+
+<%= form_for @job, html: {class: "input_form"} do |f| %>
+
+  <p>
+  <%= f.label :title %><br />
+  <%= f.text_field :title, size: "50x10" %>
+  </p>
+
+  <p>
+  <%= f.label :description %><br />
+  <%= f.text_area :description, size: "60x12" %>
+  </p>
+
+  <p>
+  <label>Company Name: </label><%= f.collection_select(:company_id, Company.all, :id, :name) %>
+  </p>
+
+  <p>
+  <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to "Back", job_path(@job) %>
